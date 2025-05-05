@@ -1,0 +1,12 @@
+diff --git a/file.txt b/file.txt
+index fd165fa..38d36d8 100644
+--- a/file.txt
++++ b/file.txt
+@@ -3,6 +3,7 @@ Second line
+ Third line
+ Fourth line
+ Fifth line
++Sixth line
+ Seventh line
+ Eighth line
+ Ninth line

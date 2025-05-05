@@ -1,0 +1,21 @@
+[package]
+name = "udiff"
+version = "1.0.0"
+autotests = true      # set true if you want to use "cargo test"
+edition = "2018"
+
+[dependencies]
+magnus = "0.7"
+rb-sys = { version = "0.9.111", features = ["global-allocator"] }
+unidiff = "0.3"
+
+[lib]
+crate-type = ["cdylib"]
+
+[features]
+default = ["stable-api-compiled-testing"]
+test-feature = []
+stable-api-compiled-testing = ["rb-sys/stable-api-compiled-testing"]
+
+[profile.release]
+debug = true
