@@ -47,7 +47,7 @@ impl PatchedFile {
 
                 for line in hunk_lines.iter() {
                     if line.is_context() {
-                        if cursor >= lines.len() || lines[cursor] != line.value.trim_end_matches('\n') {
+                        if cursor >= lines.len() || lines[cursor] != line.value.trim_end_matches(['\r', '\n']) {
                             mismatch = true;
                             break;
                         }
@@ -92,7 +92,7 @@ impl PatchedFile {
                     cursor += 1;
                 } else {
                     // added
-                    output.push(line.value.trim_end_matches('\n').to_string());
+                    output.push(line.value.trim_end_matches(['\r', '\n']).to_string());
                 }
             }
 

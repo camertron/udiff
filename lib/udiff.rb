@@ -46,7 +46,7 @@ module Udiff
     end
 
     def source_file
-      @source_file ||= @impl.source_file(@patch_set_impl)
+      @source_file ||= @impl.source_file(@patch_set_impl).strip
     end
 
     def local_source_file
@@ -54,7 +54,7 @@ module Udiff
     end
 
     def target_file
-      @target_file ||= @impl.target_file(@patch_set_impl)
+      @target_file ||= @impl.target_file(@patch_set_impl).strip
     end
 
     def local_target_file
